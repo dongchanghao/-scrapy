@@ -1,0 +1,67 @@
+create table information(
+id int not null ,
+classify_id int not null,
+title varchar(255) not null,
+source_url varchar(255) not null,
+source varchar(255) not null,
+abstract varchar(255) not null,
+label varchar(255) not null,
+comments_count int not null,
+behot_time varchar(255) not null,
+nowtime varchar(255) not null,
+duration float(3) not null,
+middle_image varchar(255) not null,
+primary key(id),
+foreign key(classify_id) references classify(id)
+);
+insert into game(title,source,source_url,abstract)VALUES ('测试一','sina','https://sina.com','测试二')
+
+create table classify(
+id int not null,
+parameter varchar(40) not null,
+chinese_name varchar(40) not null,
+primary key(id)
+);
+
+create table news_text(
+id int not null,
+news_id int not null,
+primary key(id),
+foreign key(id) references information(id)
+);
+
+
+insert into classify(id,parameter,chinese_name)VALUES(1,'__all__','推荐');
+insert into classify(id,parameter,chinese_name)VALUES(2,'news_hot','热点');
+insert into classify(id,parameter,chinese_name)VALUES(3,'news_tech','科技');
+insert into classify(id,parameter,chinese_name)VALUES(4,'news_entertainment','娱乐');
+insert into classify(id,parameter,chinese_name)VALUES(5,'news_game','游戏');
+insert into classify(id,parameter,chinese_name)VALUES(6,'news_sport','体育');
+insert into classify(id,parameter,chinese_name)VALUES(7,'news_car','汽车');
+insert into classify(id,parameter,chinese_name)VALUES(8,'news_finance','财经');
+insert into classify(id,parameter,chinese_name)VALUES(9,'news_military','军事');
+insert into classify(id,parameter,chinese_name)VALUES(10,'news_world','国际');
+insert into classify(id,parameter,chinese_name)VALUES(11,'news_fashion','时尚');
+insert into classify(id,parameter,chinese_name)VALUES(12,'news_travel','旅游');
+insert into classify(id,parameter,chinese_name)VALUES(13,'news_discovery','探索');
+insert into classify(id,parameter,chinese_name)VALUES(14,'news_baby','育儿');
+insert into classify(id,parameter,chinese_name)VALUES(15,'news_regimen','养生');
+insert into classify(id,parameter,chinese_name)VALUES(16,'news_essay','美文');
+insert into classify(id,parameter,chinese_name)VALUES(17,'news_history','历史');
+insert into classify(id,parameter,chinese_name)VALUES(18,'news_food','美食');
+insert into classify(id,parameter,chinese_name)VALUES(19,'news_politics_general','政府');
+insert into classify(id,parameter,chinese_name)VALUES(20,'news_society','社会');
+insert into classify(id,parameter,chinese_name)VALUES(21,'selected','华商韬略');
+insert into classify(id,parameter,chinese_name)VALUES(22,'news_health','健康');
+insert into classify(id,parameter,chinese_name)VALUES(23,'science_all','科学');
+insert into classify(id,parameter,chinese_name)VALUES(24,'news_politics','时政');
+insert into classify(id,parameter,chinese_name)VALUES(25,'news_media','传媒');
+insert into classify(id,parameter,chinese_name)VALUES(25,'news_nature','朕说');
+insert into classify(id,parameter,chinese_name)VALUES(25,'news_agriculture','新京报');
+insert into classify(id,parameter,chinese_name)VALUES(25,'news_traditional_culture','光明日报');
+insert into classify(id,parameter,chinese_name)VALUES(25,'news_edu','教育');
+insert into classify(id,parameter,chinese_name)VALUES(25,'news_culture','文化');
+insert into classify(id,parameter,chinese_name)VALUES(25,'news_photography','摄影');
+insert into classify(id,parameter,chinese_name)VALUES(25,'news_house','房产');
+insert into classify(id,parameter,chinese_name)VALUES(25,'digital','数码');
+insert into classify(id,parameter,chinese_name)VALUES(25,'emotion','三联生活周刊');
